@@ -1,7 +1,6 @@
 (function (window, undefined) {
     var _ = (function(){
         var instance;
-        console.log(instance);
         var _ = function(){
             if (instance){
                 return instance;
