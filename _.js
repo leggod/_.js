@@ -2,8 +2,8 @@
     var _ = (function(){
         var instance;
         var _ = function(){
-            if (!instance){
-                instance= new _();
+            if (instance){
+                return instance;
             }
             this.init();
             return instance = this;
@@ -102,7 +102,7 @@
                 return newobj;
             }
         };
-        return _;
+        return new _();
     })();
     window._ = _
 })(window)
