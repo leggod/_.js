@@ -5,11 +5,13 @@
 ```
     //引入
     <script src='_.min.js'></script>
+    
     //使用
     if(_.isType('str','String'))
     {
            alert();
     }
+
     //或 www.abc.com/index.html?a=b
     _.parseUrl(a); //b
 
