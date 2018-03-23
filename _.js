@@ -75,9 +75,6 @@
                         mm: time.getMinutes(),
                         s: time.getSeconds()
                     }
-                    // for (i in data) {
-                    //     if
-                    // }
                     return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm) + ':' + add0(s);
                 } else {
                     alert('无参数，请查询 parseUnix 方法')
