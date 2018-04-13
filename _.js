@@ -1,4 +1,4 @@
-(function (window, undefined) {
+(function () {
     var _ = (function(){
         var instance;
         var _ = function(){
@@ -100,12 +100,36 @@
                     }
                 }
                 return newobj;
+            };
+            /**
+            * 监听事件对象
+            * @params Object ele  需要传入的监听对象
+            * @params String event_name  事件名称
+            * @params Function func  事件回调
+            */
+            this.addEvent = function (ele,event_name,func){
+                if(window.attachEvent){
+                    ele.attachEvent(event_name, func);
+                }else{
+                    event_name= event_name.replace(/^on/,"");
+                    ele.addEventListener(event_name,func,false);//默认是冒泡
+                }
             }
         };
         return new _();
     })();
-    window._ = _
-})(window)
+    if (typeof module != 'undefined' && module.exports) {
+        module.exports = _;
+    }
+    else if (typeof define == 'function' && define.amd) {
+        define(function () {
+            return _;
+        });
+    }
+    else {
+        window._ = _;
+    }
+})()
 
 
 
